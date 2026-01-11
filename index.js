@@ -16,7 +16,7 @@ app.listen(port , ()=>{
 });
 
 app.get("/" , (req, res)=>{
-    res.render("/chats");
+    res.send("Home Pageeee");
 });
 
 main()
@@ -97,7 +97,7 @@ app.put("/chats/:id", async (req,res)=>{
     let update = await Chat.findByIdAndUpdate(id , {msg : newMsg} ,{ runValidators:true , new :true});
     // res.redirect("/chats");
     console.log(newMsg);
-    
+    res.redirect("/chats");
 });
 
 
