@@ -16,7 +16,7 @@ app.listen(port , ()=>{
 });
 
 app.get("/" , (req, res)=>{
-    res.redirect("/chats");
+    res.render("/chats");
 });
 
 main()
