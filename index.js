@@ -29,7 +29,7 @@ main()
 
 async function main() {
   await mongoose.connect('mongodb://127.0.0.1:27017/Whatsapp');
-
+ 
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
 
@@ -97,6 +97,16 @@ app.put("/chats/:id", async (req,res)=>{
     let update = await Chat.findByIdAndUpdate(id , {msg : newMsg} ,{ runValidators:true , new :true});
     // res.redirect("/chats");
     console.log(newMsg);
+    res.redirect("/chats");
+});
+
+//***********Delete */
+
+app.delete("/chats/:id", async (req,res)=>{
+    let {id}= req.params;
+    let deleteChat = await Chat.findByIdAndDelete(id );
+    // res.redirect("/chats");
+    console.log(deleteChat);
     res.redirect("/chats");
 });
 
