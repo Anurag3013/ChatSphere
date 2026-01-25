@@ -71,7 +71,6 @@ PUT /chats/:id – Update chat
 - Form handling and HTTP methods  
 
 ## 🌱 Future Improvements
-- Delete chat feature  
 - User authentication  
 - Real-time chat using Socket.io  
 - UI improvements with Bootstrap or Tailwind  
